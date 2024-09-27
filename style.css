@@ -1,0 +1,204 @@
+ /* General body styling */
+body {
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Center horizontally */
+    height: 100vh;
+    margin: 0;
+    background-image: url("https://img.freepik.com/premium-photo/drum-set-with-flame-background-drum-set-with-flames-background_662214-74902.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+/* Center the h1 at the top of the page */
+h1 {
+    text-align: center;
+    font-size: 48px; /* Increased size for more impact */
+    color: #cb613d; /* White color for contrast */
+    margin: 20px 0; 
+    font-family: 'Cinzel', serif; /* Classy, stylish font */
+    letter-spacing: 3px;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7), 
+                 2px 2px 5px rgba(255, 255, 255, 0.1); /* Strong shadow effect */
+    animation: slide-rotate 1.5s ease forwards; /* Apply the animation */
+}
+
+/* Define the slide-rotate animation */
+@keyframes slide-rotate {
+    0% {
+        transform: translateX(-100%) rotate(0deg); /* Start from the left and no rotation */
+        opacity: 0; /* Start hidden for smooth appearance */
+    }
+    50% {
+        transform: translateX(20px) rotate(10deg); /* Slide in with slight rotation */
+        opacity: 1; /* Fully visible */
+    }
+    100% {
+        transform: translateX(0) rotate(0deg); /* Settle in original position without rotation */
+    }
+}
+
+.container {
+    position: absolute;
+    width: auto;
+    top:20px;
+    left:20px;
+    max-width: 200px; /* Adjust the width of the container */
+    padding: 10px;
+    background-color: transparent; /* Background color for the container */
+    color: white; /* Paragraph text color */
+    border-radius: 5px;
+    border: 2px solid grey;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fire-border 1.5s infinite;
+}
+
+
+p {
+    font-size: 16px;
+    margin: 0;
+    color: white;
+    text-align: left;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0px;
+    right: 2px;
+    cursor: pointer;
+    color: rgb(30, 126, 25);
+    font-size: 18px;
+    background: none;
+    border: none;
+}
+
+.close-btn:hover {
+    color: red; /* Change color on hover */
+}
+
+
+/* Responsive font sizes for h1 */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 24px;
+    }
+}
+
+/* Drum container styling */
+.drum-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+    flex-grow: 1; /* Makes the container take up available space */
+}
+
+/* Drum box */
+.drum-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+    border: 1px solid #e97f1c;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fire-border 1.5s infinite;
+}
+
+/* Keyframes for fire effect animation */
+@keyframes fire-border {
+    0% {
+        border-color: #e97f1c;
+        box-shadow: 0 0 10px #e97f1c, 0 0 20px rgba(233, 127, 28, 0.7), 0 0 30px rgba(255, 102, 0, 0.6);
+    }
+
+    50% {
+        border-color: #ff4500;
+        box-shadow: 0 0 15px #ff4500, 0 0 30px rgba(255, 69, 0, 0.8), 0 0 40px rgba(255, 140, 0, 0.7);
+    }
+
+    100% {
+        border-color: #e97f1c;
+        box-shadow: 0 0 10px #e97f1c, 0 0 20px rgba(233, 127, 28, 0.7), 0 0 30px rgba(255, 102, 0, 0.6);
+    }
+}
+
+/* Drum styling */
+.drum {
+    padding: 20px 40px;
+    font-size: 24px;
+    border: 2px solid #e97f1c;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-weight: bolder;
+    transition: 1.2s;
+}
+
+.drum:hover {
+    background-image: linear-gradient(rgb(230, 118, 44), rgb(218, 68, 42));
+    color: white;
+}
+
+.drum:active {
+    transform: scale(1.95);
+    background-color: #dd2417;
+}
+
+/* Media Queries for responsiveness */
+
+/* For tablets and below */
+@media (max-width: 768px) {
+    .drum-container {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .drum-box {
+        width: 80px;
+        height: 80px;
+    }
+
+    .drum {
+        padding: 15px 25px;
+        font-size: 18px;
+        font-weight: bolder;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+    body {
+        flex-direction: column;
+    }
+
+    .drum-container {
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    .drum-box {
+        width: 60px;
+        height: 60px;
+        border: 1px solid #e97f1c;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .drum {
+        padding: 20px 24px;
+        font-size: 16px;
+        border: 0px solid #e97f1c;
+    }
+}

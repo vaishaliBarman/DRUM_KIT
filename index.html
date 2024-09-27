@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drum Kit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lobster&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>DRUM KIT</h1>
+    </div>
+    <div class="drum-container">
+        <!-- Each button inside its own div -->
+        <div class="drum-box">
+            <button class="drum" data-key="V">V</button>
+        </div>
+        <div class="drum-box">
+            <button class="drum" data-key="A">A</button>
+        </div>
+        <div class="drum-box">
+            <button class="drum" data-key="I">I</button>
+        </div>
+        <div class="drum-box">
+            <button class="drum" data-key="S">S</button>
+        </div>
+        <div class="drum-box">
+            <button class="drum" data-key="H">H</button>
+        </div>
+        <div class="drum-box">
+            <button class="drum" data-key="U">U</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="close-btn" onclick="hideParagraph()">✖</div>
+        <p id="paragraph">This is a drum kit. When you click the buttons or press the keys, a random sound is generated with each new click or key press</p>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+
+</html>
